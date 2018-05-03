@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+*::before,*::after{
+    box-sizing: border-box
+}
+ul,ol{
+    list-style: none
+}
+a{
+    text-decoration: none
+}
+.icon {
+    width: 0.51rem; height: 0.59rem;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
+ ::-webkit-scrollbar{
+    display:none;
+  }
