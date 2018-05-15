@@ -5,34 +5,53 @@ import A from '@/components/A'
 import B from '@/components/B'
 import Profile from '@/components/Profile'
 import PersonalInformation from '@/components/PersonalInformation'
+import Cart from '@/components/Cart'
 
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
+  mode:'history',
+  routes: [{
+      path: '/',
+      redirect: '/home'
+    },
     {
       path: '/',
       name: 'profile',
       component: Profile,
-      children:[{
-        path:'home',
-        component:Home
-      },
-      {
-        path:'info',
-        component:PersonalInformation
-      }]
+      children: [{
+          path: 'home',
+          name:'home',
+          component: Home
+        },
+        {
+          path: 'info',
+          name:'info',
+          component: PersonalInformation
+
+        },
+        {
+          path: 'cart',
+          name:'cart',
+          component: Cart
+        }
+      ]
+    },
+    // {
+    //   path:'/cart',
+    //   name:'cart',
+    //   component:Cart
+    // },
+    {
+      path: '/A',
+      name: 'A',
+      component: A
     },
     {
-      path:'/A',
-      name:'A',
-      component:A
-    },
-    {
-      path:'/B',
-      name:'B',
-      component:B
+      path: '/B',
+      name: 'B',
+      component: B
     }
   ]
 })
